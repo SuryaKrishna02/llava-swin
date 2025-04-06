@@ -1,0 +1,28 @@
+{
+    "embed_dim": 128,
+    "vision_cfg": {
+        "timm_model_name": "swinv2_base_window12to16_192to256.ms_in22k_ft_in1k",
+        "timm_model_pretrained": false,
+        "timm_pool": "",
+        "timm_proj": "linear",
+        "image_size": 256,
+        "patch_size": 4,
+        "window_size": 16,
+        "embed_dim": 128,
+        "depths": [2, 2, 18, 2],
+        "num_heads": [4, 8, 16, 32],
+        "drop_path_rate": 0.2,
+        "mlp_ratio": 4.0
+    },
+    "text_cfg": {
+        "hf_model_name": "roberta-base",
+        "hf_tokenizer_name": "roberta-base",
+        "hf_model_pretrained": true,
+        "proj": "mlp",
+        "pooler_type": "cls",
+        "context_length": 77,
+        "width": 768,
+        "heads": 12,
+        "layers": 12
+    }
+}
