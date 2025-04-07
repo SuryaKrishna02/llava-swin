@@ -9,7 +9,7 @@ def create_dummy_image(text, size=(256, 256), bgcolor="white"):
     draw.text((10, 10), text, fill="black")
     return img
 
-def save_to_webdataset(num_samples=1000, output_path="data/dummy_dataset.tar"):
+def save_to_webdataset(num_samples=1000, output_path="./data/dummy_dataset.tar"):
     with tarfile.open(output_path, "w") as tar:
         for i in range(1, num_samples + 1):
             key = f"{i:06d}"

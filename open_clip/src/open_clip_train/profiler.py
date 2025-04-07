@@ -1,7 +1,7 @@
 import argparse
 
 import torch
-import open_clip
+import src.open_clip
 import pandas as pd
 from torch.utils.flop_counter import FlopCounterMode
 try:
