@@ -14,10 +14,10 @@ try:
 except ImportError:
     wandb = None
 
-from src.open_clip import get_input_dtype, CLIP, CustomTextCLIP
-from src.open_clip_train.distributed import is_master
-from src.open_clip_train.zero_shot import zero_shot_eval
-from src.open_clip_train.precision import get_autocast
+from open_clip import get_input_dtype, CLIP, CustomTextCLIP
+from open_clip_train.distributed import is_master
+from open_clip_train.zero_shot import zero_shot_eval
+from open_clip_train.precision import get_autocast
 
 
 class AverageMeter(object):
