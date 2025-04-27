@@ -1,3 +1,2 @@
-datasets
-img2dataset
-huggingface-hub
+tqdm
+requests
