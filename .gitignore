@@ -135,6 +135,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+clip-data/
 
 # Spyder project settings
 .spyderproject
