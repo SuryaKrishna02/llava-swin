@@ -137,6 +137,7 @@ env.bak/
 venv.bak/
 clip-data/
 datacomp/
+data/
 
 # Spyder project settings
 .spyderproject
