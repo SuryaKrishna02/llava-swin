@@ -1,4 +1,5 @@
-The command to download the datacomp small scale dataset metadata with restricting the data of 1M Images.
+The command to download the pd12m dataset from the parquet file.
 ```bash
-python download_pd12m.py --start 155 --end 2480 --max-images 100000 --data-dir data
+img2dataset --url_list "./split/chunk_1.parquet" --input_format "parquet" --url_col "url" --caption_col "caption" --output_format webdataset --number_sample_per_shard=5000 --skip_reencode=True --output_folder "./data" --processes_count 16 --thread_count 64 --resize_mode no
 ```   
+
