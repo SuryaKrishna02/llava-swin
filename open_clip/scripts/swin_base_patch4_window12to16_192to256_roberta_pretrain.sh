@@ -1,0 +1,21 @@
+python -m open_clip_train.main \
+    --save-frequency 1 \
+    --zeroshot-frequency 1 \
+    --report-to wandb \
+    --wandb_project_name swin-open-clip \
+    --train-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/{00155..00174}.tar' \
+    --train-num-samples 99911 \
+    --val-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/{00175..00176}.tar' \
+    --val-num-samples 9992 \
+    --dataset-type webdataset \
+    --imagenet-val=/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/imagenet/val \
+    --name 'llava-swin' \
+    --warmup 1000 \
+    --batch-size=256 \
+    --lr=1e-3 \
+    --wd=0.1 \
+    --epochs=1 \
+    --precision amp\
+    --workers=8 \
+    --seed 42\
+    --model swin_base_patch4_window12to16_192to256_roberta
