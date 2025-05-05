@@ -1,0 +1,16 @@
+{
+    "embed_dim": 512,
+    "vision_cfg": {
+        "timm_model_name": "swinv2_base_window12_192.ms_in22k",
+        "timm_model_pretrained": true,
+        "patch_dropout": 0.6,
+        "timm_pool": "avg",
+        "timm_proj": "linear",
+        "image_size": 192
+    },
+    "text_cfg": {
+        "hf_model_name": "roberta-base",
+        "hf_tokenizer_name": "roberta-base",
+        "hf_pooler_type": "mean_pooler"
+    }
+}

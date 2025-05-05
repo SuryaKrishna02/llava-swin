@@ -32,6 +32,26 @@ FILES=(
 00174.tar
 00175.tar
 00176.tar
+00177.tar
+00178.tar
+00179.tar
+00180.tar
+00181.tar
+00182.tar
+00183.tar
+00184.tar
+00185.tar
+00186.tar
+00187.tar
+00188.tar
+00189.tar
+00190.tar
+00191.tar
+00192.tar
+00193.tar
+00194.tar
+00195.tar
+00196.tar
 )
 
 TOTAL=${#FILES[@]}

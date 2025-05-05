@@ -3,12 +3,23 @@ The command to download the pd12m dataset from the parquet file.
 img2dataset --url_list "<parquet file path>" --input_format "parquet" --url_col "url" --caption_col "caption" --output_format webdataset --number_sample_per_shard=5000 --skip_reencode=True --output_folder "<output_folder>" --processes_count 16 --thread_count 64 --resize_mode no
 ```   
 
-The commands to download the pd12m dataset directly from huggingface-cli
+The commands to download the pd12m dataset directly from huggingface-cli (Recommended)
 ```bash
 mkdir data
 pip install huggingface_hub
 chmod +x download.sh 
 ./download.sh <YOUR_DIRECTORY>
+```
+
+The command to calculate the number of images in the `.tar` files.
+```bash
+python pd12m_image_stats.py "<DATA_FOLDER>" --exclude <VAL_FILE_NAME_1> <VAL_FILE_NAME_2>
+```
+Sample Results after running the above command
+```bash
+Total images (including excluded files): 109903
+Total excluded images: 9992
+Final image count (after exclusions): 99911
 ```
 
 Create the Necessaray folders
