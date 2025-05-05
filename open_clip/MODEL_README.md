@@ -17,23 +17,34 @@ python -m open_clip_train.main \
     --zeroshot-frequency 1 \
     --report-to wandb \
     --wandb-project-name swin-open-clip \
-    --train-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/00155.tar' \
+    --train-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/{00155..00174}.tar \
     --train-num-samples 99911 \
-    --val-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/00175.tar' \
+    --val-data '/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/data/{00175..00176}.tar' \
     --val-num-samples 9992 \
     --dataset-type webdataset \
     --imagenet-val=/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/imagenet/val \
-    --name 'pd12m-100k-swin-roberta-5-e-4' \
-    --warmup 100 \
+    --name 'pd12m-100k-swin-roberta-1-e-3-grad-accum-4-256' \
+    --warmup 60 \
     --batch-size 256 \
-    --accum-freq 2 \
-    --lr=5e-4 \
+    --accum-freq 4 \
+    --lr=1e-3 \
     --wd=0.1 \
-    --epochs=5 \
+    --epochs=3 \
     --precision amp_bf16\
-    --workers=1 \
+    --workers=20 \
     --log-every-n-steps 4 \
     --seed 42 \
     --logs /teamspace/studios/this_studio/llava-cvt-swin/open_clip/logs \
-    --model swin_base_patch4_window12to16_192to256_roberta
+    --model swinv2_base_window12_192_roberta
+```
+
+Login to your HuggingFace using this command by first getting the personal access token
+with read and write permissions to the repository.
+```bash
+huggingface-cli login
+```
+
+Command to push the model to the HuggingFace
+```bash
+python -m open_clip.push_to_hf_hub --model swinv2_base_window12_192_roberta --pretrained /teamspace/studios/this_studio/llava-cvt-swin/open_clip/logs/pd12m-100k-swin-roberta-5-e-4-grad-accum-2-256/checkpoints/epoch_3.pt --repo-id SuryaKrishna02/swinv2-roberta-openclip
 ```
