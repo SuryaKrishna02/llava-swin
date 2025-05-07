@@ -23,8 +23,9 @@ python -m open_clip_train.main \
     --val-num-samples 9992 \
     --dataset-type webdataset \
     --imagenet-val=/teamspace/studios/this_studio/llava-cvt-swin/clip-dataset/imagenet/val \
-    --name 'pd12m-100k-swin-roberta-1-e-3-grad-accum-4-256' \
+    --name 'pd12m-100k-swin-roberta-1-e-3-cosine-grad-accum-4-256' \
     --warmup 60 \
+    --lr-scheduler "cosine" \
     --batch-size 256 \
     --accum-freq 4 \
     --lr=1e-3 \
